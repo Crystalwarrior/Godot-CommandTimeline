@@ -239,8 +239,7 @@ func duplicate_command(command:Blockflow.CommandClass, to_position:int) -> void:
 		push_error("!command_collection")
 		return
 	
-	var action_name:String = "Duplicate command '%s'" % [command.get_command_name()]
-	collection_displayer.reselect_index = to_position
+	var action_name:String = "Duplicate command '%s'" % [command.command_name]
 	if Engine.is_editor_hint():
 		editor_undoredo.create_action(action_name)
 		editor_undoredo.add_do_method(command_collection, "copy", command, to_position)
